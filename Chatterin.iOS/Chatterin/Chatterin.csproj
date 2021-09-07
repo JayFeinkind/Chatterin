@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+        <ProjectGuid>{C90CF174-6E30-4F7A-A86F-E2FF8731411B}</ProjectGuid>
+        <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <TemplateGuid>{edc1b0fa-90cd-4038-8fad-98fe74adb368}</TemplateGuid>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>Chatterin</RootNamespace>
+        <AssemblyName>Chatterin</AssemblyName>
+        <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+        <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+        <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchArch>x86_64</MtouchArch>
+        <MtouchLink>None</MtouchLink>
+        <MtouchDebug>true</MtouchDebug>
+        <CodesignProvision>Chatterin.Dev</CodesignProvision>
+        <CodesignKey>iPhone Developer: Jason Feinkind (3TQ5X6N3WQ)</CodesignKey>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchLink>None</MtouchLink>
+        <MtouchArch>x86_64</MtouchArch>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhone\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchDebug>true</MtouchDebug>
+        <CodesignProvision>Chatterin.Dev</CodesignProvision>
+<MtouchLink>SdkOnly</MtouchLink>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhone\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignKey>iPhone Developer</CodesignKey>
+<MtouchLink>SdkOnly</MtouchLink>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Core" />
+        <Reference Include="Xamarin.iOS" />
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+      <PackageReference Include="Unity">
+        <Version>5.11.7</Version>
+      </PackageReference>
+      <PackageReference Include="Newtonsoft.Json">
+        <Version>12.0.3</Version>
+      </PackageReference>
+      <PackageReference Include="sqlite-net-pcl">
+        <Version>1.7.335</Version>
+      </PackageReference>
+      <PackageReference Include="Xam.Plugin.Connectivity">
+        <Version>3.2.0</Version>
+      </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\gradiant.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\gradiant.imageset\gradient.jpg" />
+        <ImageAsset Include="Assets.xcassets\gradiant.imageset\gradient-1.jpg" />
+        <ImageAsset Include="Assets.xcassets\gradiant.imageset\gradient-2.jpg" />
+        <ImageAsset Include="Assets.xcassets\gradiant.imageset\gradient-3.jpg" />
+        <ImageAsset Include="Assets.xcassets\greenCheck.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\greenCheck.imageset\geenCheck.png" />
+        <ImageAsset Include="Assets.xcassets\greenCheck.imageset\geenCheck-1.png" />
+        <ImageAsset Include="Assets.xcassets\greenCheck.imageset\geenCheck-2.png" />
+        <ImageAsset Include="Assets.xcassets\greenCheck.imageset\thumbs-up-2.png" />
+        <ImageAsset Include="Assets.xcassets\redX.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\redX.imageset\redX.png" />
+        <ImageAsset Include="Assets.xcassets\redX.imageset\redX-1.png" />
+        <ImageAsset Include="Assets.xcassets\redX.imageset\redX-2.png" />
+        <ImageAsset Include="Assets.xcassets\redX.imageset\thumbs-down-2.png" />
+        <ImageAsset Include="Assets.xcassets\defaultContact.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\defaultContact.imageset\contactIcon.png" />
+        <ImageAsset Include="Assets.xcassets\defaultContact.imageset\contactIcon-1.png" />
+        <ImageAsset Include="Assets.xcassets\defaultContact.imageset\contactIcon-2.png" />
+        <ImageAsset Include="Assets.xcassets\imageIcon.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\imageIcon.imageset\imageIcon.png" />
+        <ImageAsset Include="Assets.xcassets\imageIcon.imageset\imageIcon-1.png" />
+        <ImageAsset Include="Assets.xcassets\imageIcon.imageset\imageIcon-2.png" />
+        <ImageAsset Include="Assets.xcassets\sendIcon.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\senderBubble.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\senderBubble.imageset\senderBubble.png" />
+        <ImageAsset Include="Assets.xcassets\senderBubble.imageset\senderBubble-1.png" />
+        <ImageAsset Include="Assets.xcassets\senderBubble.imageset\senderBubble-2.png" />
+        <ImageAsset Include="Assets.xcassets\receiverBubble.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\receiverBubble.imageset\receiveBubble.png" />
+        <ImageAsset Include="Assets.xcassets\sendIcon.imageset\saveIcon.png" />
+        <ImageAsset Include="Assets.xcassets\sendIcon.imageset\saveIcon-1.png" />
+        <ImageAsset Include="Assets.xcassets\sendIcon.imageset\saveIcon-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\" />
+        <Folder Include="Assets.xcassets\gradiant.imageset\" />
+        <Folder Include="Assets.xcassets\greenCheck.imageset\" />
+        <Folder Include="Assets.xcassets\redX.imageset\" />
+        <Folder Include="Settings.bundle\" />
+        <Folder Include="Services\" />
+        <Folder Include="Assets.xcassets\defaultContact.imageset\" />
+        <Folder Include="Assets.xcassets\imageIcon.imageset\" />
+        <Folder Include="Assets.xcassets\sendIcon.imageset\" />
+        <Folder Include="Assets.xcassets\senderBubble.imageset\" />
+        <Folder Include="Assets.xcassets\receiverBubble.imageset\" />
+        <Folder Include="ViewControllers\" />
+        <Folder Include="TableViewCells\" />
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="LaunchScreen.storyboard" />
+        <InterfaceDefinition Include="Main.storyboard" />
+        <InterfaceDefinition Include="Messages.storyboard" />
+        <InterfaceDefinition Include="MessagesHeaderView.xib" />
+        <InterfaceDefinition Include="TableViewCells\ConversationsTableViewCell.xib" />
+        <InterfaceDefinition Include="TableViewCells\ReceiverTableViewCell.xib" />
+        <InterfaceDefinition Include="TableViewCells\SenderTableViewCell.xib" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Info.plist" />
+        <None Include="Entitlements.plist" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+        <Compile Include="SceneDelegate.cs" />
+        <Compile Include="AccessoryTextView.cs" />
+        <Compile Include="AccessoryTextView.designer.cs">
+          <DependentUpon>AccessoryTextView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllerBase.cs" />
+        <Compile Include="LoginTextViewContainer.cs" />
+        <Compile Include="LoginTextViewContainer.designer.cs">
+          <DependentUpon>LoginTextViewContainer.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UIViewExtensions.cs" />
+        <Compile Include="Services\IosFileService.cs" />
+        <Compile Include="Services\IosSettingsService.cs" />
+        <Compile Include="Services\IosAppUtilities.cs" />
+        <Compile Include="Services\IosConnectivityService.cs" />
+        <Compile Include="MessagesHeaderView.cs" />
+        <Compile Include="MessagesHeaderView.designer.cs">
+          <DependentUpon>MessagesHeaderView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="MessageTextView.cs" />
+        <Compile Include="ViewControllers\ConversationCatalogViewController.cs" />
+        <Compile Include="ViewControllers\ConversationCatalogViewController.designer.cs">
+          <DependentUpon>ConversationCatalogViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\CreateAccountViewController.cs" />
+        <Compile Include="ViewControllers\CreateAccountViewController.designer.cs">
+          <DependentUpon>CreateAccountViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\LoginViewController.cs" />
+        <Compile Include="ViewControllers\LoginViewController.designer.cs">
+          <DependentUpon>LoginViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\MainTabBarViewController.cs" />
+        <Compile Include="ViewControllers\MainTabBarViewController.designer.cs">
+          <DependentUpon>MainTabBarViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\MessagesViewController.cs" />
+        <Compile Include="ViewControllers\MessagesViewController.designer.cs">
+          <DependentUpon>MessagesViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TableViewCells\ConversationsTableViewCell.cs" />
+        <Compile Include="TableViewCells\ConversationsTableViewCell.designer.cs">
+          <DependentUpon>ConversationsTableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TableViewCells\IMessageTableViewCell.cs" />
+        <Compile Include="TableViewCells\ReceiverTableViewCell.cs" />
+        <Compile Include="TableViewCells\ReceiverTableViewCell.designer.cs">
+          <DependentUpon>ReceiverTableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TableViewCells\SenderTableViewCell.cs" />
+        <Compile Include="TableViewCells\SenderTableViewCell.designer.cs">
+          <DependentUpon>SenderTableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Services\ImageUtilityService.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Include="Settings.bundle\Root.plist" />
+      <BundleResource Include="UserSettings.plist" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Chatterin.ClassLibrary\Chatterin.ClassLibrary.csproj">
+        <Project>{B8DC5057-50A4-4516-9430-19FF0F266E98}</Project>
+        <Name>Chatterin.ClassLibrary</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Chatterin.Services\Chatterin.Services.csproj">
+        <Project>{9E149D4D-CEF8-4638-9217-39E52CFF5A85}</Project>
+        <Name>Chatterin.Services</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Chatterin.ViewModels\Chatterin.ViewModels.csproj">
+        <Project>{C8BB9538-0A81-465A-AAE1-186777160D2B}</Project>
+        <Name>Chatterin.ViewModels</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
