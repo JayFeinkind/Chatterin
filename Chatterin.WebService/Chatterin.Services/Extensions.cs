@@ -7,6 +7,7 @@ namespace Chatterin.Services
 {
     public static class Extensions
     {
+        //TODO this does not seem like the best way to validate email address
         public static bool IsValidEmail(this string emailaddress)
         {
             try
