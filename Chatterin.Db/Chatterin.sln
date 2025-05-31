@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Chatterin", "Chatterin\Chatterin.sqlproj", "{61A9F95F-87BE-4DDE-9598-829D86BFA84E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61A9F95F-87BE-4DDE-9598-829D86BFA84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A9F95F-87BE-4DDE-9598-829D86BFA84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A9F95F-87BE-4DDE-9598-829D86BFA84E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{61A9F95F-87BE-4DDE-9598-829D86BFA84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A9F95F-87BE-4DDE-9598-829D86BFA84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A9F95F-87BE-4DDE-9598-829D86BFA84E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FDD3584-3A2E-4809-BF8B-F021391C2194}
+	EndGlobalSection
+EndGlobal

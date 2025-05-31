@@ -21,7 +21,7 @@ namespace Chatterin.DataAccess.TableDefinitions
             builder.HasOne(d => d.UserConversation)
                 .WithMany(p => p.Messages)
                 .HasForeignKey(d => d.UserConversationId)
-                .HasConstraintName("FK__Messages__UserCo__6754599E");
+                .HasConstraintName("FK_Messages_UserConversations");
         }
     }
 }

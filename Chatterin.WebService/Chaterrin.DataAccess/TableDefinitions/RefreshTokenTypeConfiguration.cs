@@ -24,7 +24,7 @@ namespace Chatterin.DataAccess.TableDefinitions
             builder.HasOne(d => d.User)
                     .WithMany(p => p.RefreshTokens)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__RefreshTo__UserI__5EBF139D");
+                    .HasConstraintName("FK_RefreshToToken_UserId");
         }
     }
 }
