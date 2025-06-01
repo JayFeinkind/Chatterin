@@ -11,22 +11,15 @@ namespace Chatterin.WebService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MessagesController : AuthorizedController
+    public class MessagesController(IConversationService conversationService) : AuthorizedController
     {
-        IConversationService _conversationService;
-
-        public MessagesController(IConversationService conversationService)
-        {
-            _conversationService = conversationService;
-        }
-
         [HttpGet]
         [Authorize]
         [Route("conversations")]
         public async Task<ActionResult<ApiResult<IEnumerable<ConversationDto>>>> Conversations()
         {
             var currentUserId = GetUserIdFromClaims();
-            var result = await _conversationService.GetUsersConversations(currentUserId);
+            var result = await conversationService.GetUsersConversations(currentUserId);
 
             return Ok(result);
         }
@@ -37,7 +30,7 @@ namespace Chatterin.WebService.Controllers
         public async Task<ActionResult<ApiResult<ConversationDto>>> AddMessageToConversation(AddMessageDto dto)
         {
             var currentUserId = GetUserIdFromClaims();
-            var result = await _conversationService.AddMessageToConversation(dto, currentUserId);
+            var result = await conversationService.AddMessageToConversation(dto, currentUserId);
 
             return Ok(result);
         }
