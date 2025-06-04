@@ -7,34 +7,37 @@
 
 import Foundation
 
-class CreateAccountModel{
-    
-    let apiService = ApiService<userNameResponseModel>()
-    
+class CreateAccountModel {
+
     func isUserNameTaken(userName: String?) async -> userNameResponseModel {
         var result = userNameResponseModel()
         
         if userName != nil {
+            let apiResponse: ApiResult<Bool> = await getApiResponse(url:apiHelper.isUserNameTakenUrl)
             
+            result.success = apiResponse.success
+            result.isUserNameTaken = apiResponse.result ?? false
+            
+            if result.success != true && apiResponse.errorMessage.count > 0 {
+                result.errorMessage = apiResponse.errorMessage[0]
+            }
         }
         
         return result
     }
     
-    func getApiResponse() async{
+    func getApiResponse<T: Decodable>(url: String) async -> ApiResult<T>{
+        var result = ApiResult<T>()
+        let apiService = ApiService<T>()
         
-        do
-        {
-            let response = try await apiService.fetchFromAPI(urlStr: "someUrl")
+        do {
+            result = try await apiService.fetchFromAPI(urlStr: url)
         }
-        catch{
-            
+        catch {
+            result.success = false
+            result.errorMessage.append("Unable to contact server")
         }
+        
+        return result
     }
-    
-}
-
-struct userNameResponseModel : Decodable{
-    var success = false
-    var errorMessage = ""
 }

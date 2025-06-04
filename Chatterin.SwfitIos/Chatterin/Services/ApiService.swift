@@ -17,7 +17,7 @@ class ApiService<T: Decodable>{
 
         let (data, _) = try await URLSession.shared.data(from: url)
 
-        result.data = try JSONDecoder().decode(T.self, from: data)
+        result.result = try JSONDecoder().decode(T.self, from: data)
 
         return result
     }
@@ -26,6 +26,6 @@ class ApiService<T: Decodable>{
 
 struct ApiResult<T>{
     var success = false
-    var data: T? = nil
-    var errorMessage = ""
+    var result: T? = nil
+    var errorMessage: [String] = []
 }
