@@ -33,6 +33,12 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         if !response.success {
             showError(message: response.errorMessage)
         }
+        else if response.isUserNameAvailable{
+            showError(message: "available")
+        }
+        else {
+            showError(message: "User name is already taken")
+        }
     }
     
     @MainActor func showError(message: String?){

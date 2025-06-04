@@ -17,15 +17,15 @@ class ApiService<T: Decodable>{
 
         let (data, _) = try await URLSession.shared.data(from: url)
 
-        result.result = try JSONDecoder().decode(T.self, from: data)
+        result = try JSONDecoder().decode(ApiResult<T>.self, from: data)
 
         return result
     }
     
 }
 
-struct ApiResult<T>{
+struct ApiResult<T: Decodable>: Decodable{
     var success = false
     var result: T? = nil
-    var errorMessage: [String] = []
+    var errors: [String] = []
 }

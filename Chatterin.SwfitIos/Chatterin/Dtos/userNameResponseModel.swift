@@ -9,6 +9,6 @@ import Foundation
 
 struct userNameResponseModel{
     var success = false
-    var isUserNameTaken = false
+    var isUserNameAvailable = false
     var errorMessage = ""
 }

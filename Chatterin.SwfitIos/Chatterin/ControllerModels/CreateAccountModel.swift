@@ -13,13 +13,15 @@ class CreateAccountModel {
         var result = userNameResponseModel()
         
         if userName != nil {
-            let apiResponse: ApiResult<Bool> = await getApiResponse(url:apiHelper.isUserNameTakenUrl)
+            let url = apiHelper.isUserNameTakenUrl + "?userName=" + userName!
+            
+            let apiResponse: ApiResult<Bool> = await getApiResponse(url:url)
             
             result.success = apiResponse.success
-            result.isUserNameTaken = apiResponse.result ?? false
+            result.isUserNameAvailable = apiResponse.result ?? false
             
-            if result.success != true && apiResponse.errorMessage.count > 0 {
-                result.errorMessage = apiResponse.errorMessage[0]
+            if result.success != true && apiResponse.errors.count > 0 {
+                result.errorMessage = apiResponse.errors[0]
             }
         }
         
@@ -33,9 +35,10 @@ class CreateAccountModel {
         do {
             result = try await apiService.fetchFromAPI(urlStr: url)
         }
-        catch {
+        catch let error{
             result.success = false
-            result.errorMessage.append("Unable to contact server")
+            result.errors.append("Unable to contact server")
+            print(error.localizedDescription)
         }
         
         return result

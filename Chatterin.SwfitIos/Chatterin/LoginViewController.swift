@@ -16,14 +16,13 @@ class LoginViewController: UIViewController {
         
         
         ViewContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
-        
-        
     }
 
     @IBAction func CreateAccountTouchUp(_ sender: Any) {
         
         let storyboard = UIStoryboard.init(name: "CreateAccount", bundle: nil)
         let controller = storyboard.instantiateInitialViewController()!
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     
