@@ -8,7 +8,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var CreateAccountButton: UIButton!
     @IBOutlet weak var ViewContainer: UIView!
     
-    let loginModel = LoginModel()
+    let loginViewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

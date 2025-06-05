@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>http://192.168.0.20/</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -20,23 +37,6 @@
 				</dict>
 			</array>
 		</dict>
-	</dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-	      <key>NSAllowsArbitraryLoads</key> 
-	      <false/>
-	       <key>NSExceptionDomains</key>
-	       <dict>
-	            <key>http://192.168.0.20/</key> <!--Include your domain at this line -->
-	            <dict>
-	                <key>NSIncludesSubdomains</key>
-	                <true/>
-	                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-	                <true/>
-	                <key>NSTemporaryExceptionMinimumTLSVersion</key>
-	                <string>TLSv1.1</string>
-	            </dict>
-	       </dict>
 	</dict>
 </dict>
 </plist>
