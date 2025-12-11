@@ -7,7 +7,14 @@
 
 import Foundation
 
-class CreateAccountViewModel {
+class createAccountViewModel: viewModelBase {
+    
+    func loadData() async {
+        
+    }
+    
+    var navigationRequested: ((viewModelBase) -> Void)?
+    
     
     var isUserNameAvailable = false
     let apiService = ApiService()

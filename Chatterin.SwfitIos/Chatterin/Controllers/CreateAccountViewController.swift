@@ -1,8 +1,10 @@
 import UIKit
 
-class CreateAccountViewController: UIViewController, UITextFieldDelegate {
+class CreateAccountViewController: viewControllerBase, UITextFieldDelegate {
     
-   let createAccountViewModel = CreateAccountViewModel()
+    var createAccountViewModel:createAccountViewModel {
+        return super.viewModel as! createAccountViewModel
+    }
     
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!

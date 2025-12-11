@@ -1,6 +1,10 @@
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: viewControllerBase {
+    
+    var loginViewModel:LoginViewModel {
+        return super.viewModel as! LoginViewModel
+    }
     
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var UserNameField: UITextField!
@@ -8,7 +12,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var CreateAccountButton: UIButton!
     @IBOutlet weak var ViewContainer: UIView!
     
-    let loginViewModel = LoginViewModel()
+    override func loadView() {
+        
+        super.viewModel = LoginViewModel()
+        
+        super.loadView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,13 +26,17 @@ class LoginViewController: UIViewController {
         
         ViewContainer.backgroundColor = UIColor.white.withAlphaComponent(0.25)
     }
-
-    @IBAction func CreateAccountTouchUp(_ sender: Any) {
-        
+    
+    override func navigate(viewModel: viewModelBase) {
         let storyboard = UIStoryboard.init(name: "CreateAccount", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController()!
+        let controller = storyboard.instantiateInitialViewController()! as viewControllerBase
+        controller.viewModel = viewModel
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+
+    @IBAction func CreateAccountTouchUp(_ sender: Any) {
+        loginViewModel.navigateToCreateAccount()
     }
     
 }

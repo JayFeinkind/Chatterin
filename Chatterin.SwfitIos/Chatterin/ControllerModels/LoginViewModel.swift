@@ -7,6 +7,23 @@
 
 import Foundation
 
-class LoginViewModel {
+class LoginViewModel: viewModelBase {
+    var navigationRequested: ((viewModelBase) -> Void)? = nil
     
+
+    
+
+    
+   
+    func navigateToCreateAccount(){
+        navigationRequested?(createAccountViewModel())
+    }
+    
+    
+    func loadData() async {
+        
+    }
+    
+    
+    let apiService = ApiService()
 }
